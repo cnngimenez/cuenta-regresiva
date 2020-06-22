@@ -2,7 +2,7 @@
 $video_url = 'typing';
 $msj = '';
 $title = '';
-$fecha_fin = '';
+$fin = '';
 
 if (isset($_REQUEST['video'])){
     $video_url = $_REQUEST['video'];
@@ -12,9 +12,14 @@ if (isset($_REQUEST['msj'])){
     $title = $msj;
 }
 if (isset($_REQUEST['fin'])){
-    $fecha_fin = $_REQUEST['fin'];
+    $fin = $_REQUEST['fin'];
 }
 
+
+$fecha_fin = DateTime::createFromFormat('Y,m,d,H,i', $fin);
+$fecha_js = $fecha_fin->format('Y') . ',' .
+            $fecha_fin->format('m') . ' - 1,' .
+            $fecha_fin->format('d,H,i');
 ?>
 
 <html>
@@ -46,32 +51,35 @@ if (isset($_REQUEST['fin'])){
               data-lead-id="countdown-headline">
             <?= $msj ?>
           </h3>
-          <ul class="countdown" data-lead-id="countdown">
-            <li>
-              <div class="flap">
-                <span id="days" class="days">03</span>
-              </div>
-              <p class="timeRefDays" data-lead-id="days">DIAS</p>
-            </li>
-            <li>
-              <div class="flap">
-                <span id="hours" class="hours">15</span>
-              </div>
-              <p class="timeRefHours" data-lead-id="hours">HORAS</p>
-            </li>
-            <li>
-              <div class="flap">
-                <span id="minutes" class="minutes">53</span>
-              </div>
-              <p class="timeRefMinutes" data-lead-id="minutes">MINUTOS</p>
-            </li>
-            <li>
-              <div class="flap">
-                <span id="seconds" class="seconds">25</span>
-              </div>
-              <p class="timeRefSeconds" data-lead-id="seconds">SEGUNDOS</p>
-            </li>
-          </ul>
+          <div class="tooltip">
+            <ul class="countdown" data-lead-id="countdown">
+              <li>
+                <div class="flap">
+                  <span id="days" class="days">03</span>
+                </div>
+                <p class="timeRefDays" data-lead-id="days">DIAS</p>
+              </li>
+              <li>
+                <div class="flap">
+                  <span id="hours" class="hours">15</span>
+                </div>
+                <p class="timeRefHours" data-lead-id="hours">HORAS</p>
+              </li>
+              <li>
+                <div class="flap">
+                  <span id="minutes" class="minutes">53</span>
+                </div>
+                <p class="timeRefMinutes" data-lead-id="minutes">MINUTOS</p>
+              </li>
+              <li>
+                <div class="flap">
+                  <span id="seconds" class="seconds">25</span>
+                </div>
+                <p class="timeRefSeconds" data-lead-id="seconds">SEGUNDOS</p>
+              </li>
+            </ul>
+            <span class="tooltip-text"><?= $fecha_fin->format('r'); ?></span>
+          </div>
           <div class="footer">
             <a href="https://github.com/cnngimenez/cuenta-regresiva">
               <img src="./imgs/pinned-octocat.svg" width="25px"
@@ -87,7 +95,7 @@ if (isset($_REQUEST['fin'])){
 
     <script>
      // Get the video
-     var webinar=new Date(<?= $fecha_fin ?>);
+     var webinar=new Date(<?= $fecha_js ?>);
      
      var video = document.getElementById("myVideo");
 
