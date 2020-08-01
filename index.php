@@ -1,8 +1,8 @@
 <?php
-$video_url = 'typing';
+$video_url = './videos/typing.mp4';
 $msj = '';
 $title = '';
-$fin = '';
+$fin = '0,0,0,0,0';
 
 if (isset($_REQUEST['video'])){
     $video_url = $_REQUEST['video'];
@@ -15,8 +15,10 @@ if (isset($_REQUEST['fin'])){
     $fin = $_REQUEST['fin'];
 }
 
-
 $fecha_fin = DateTime::createFromFormat('Y,m,d,H,i', $fin);
+if (!$fecha_fin){
+    $fecha_fin = new DateTime();
+}
 $fecha_js = $fecha_fin->format('Y') . ',' .
             $fecha_fin->format('m') . ' - 1,' .
             $fecha_fin->format('d,H,i');
