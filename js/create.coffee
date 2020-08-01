@@ -14,13 +14,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-videos = [
-    'typing'
-    'mate'
-    'cafe'
-    'beer'
-]
-
 create_link_from_form = () ->
     txtmsg = $('#message')
 
@@ -46,8 +39,8 @@ create_link = (data) ->
     fin = data.date.year + "," + data.date.month + "," + data.date.day
     fin += "," + data.date.hour + "," + data.date.min
     
-    local_url = new URL document.URL
-    url = new URL local_url.origin
+    url = new URL document.URL
+    url.pathname = url.pathname.match("(.*)(/create.html$)")[1] + "/"
 
     url.searchParams.set 'title', data.message
     url.searchParams.set 'msj', data.message
