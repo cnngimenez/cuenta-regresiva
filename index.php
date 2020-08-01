@@ -23,15 +23,26 @@ $fecha_js = $fecha_fin->format('Y') . ',' .
             $fecha_fin->format('m') . ' - 1,' .
             $fecha_fin->format('d,H,i');
 ?>
-
 <html>
   <head>
     <meta charset="utf-8">
     <meta content='text/html; charset=UTF-8' http-equiv='content-type'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta content="UNComa" name="author">
+    <meta content="Christian Gimenez, Pablo Kogan" name="author">
     <meta name="description" content="Cuenta regresiva. <?=$msj?>...">
+    <meta content='' name='keywords'>
+    
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='Cuenta regresiva. <?=$msj?>...' name='twitter:title'>
+    <meta content='Cuenta regresiva. <?=$msj?>...' name='twitter:description'>
+    
+    <meta content='' property='og:url'>
+    <meta content='Cuenta regresiva. <?=$msj?>...' property='og:title'>
+    <meta content='Cuenta regresiva. <?=$msj?>...' property='og:description'>
+    <meta content='website' property='og:type'>
+    
     <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
