@@ -1,0 +1,25 @@
+{
+  "name": "cuenta-regresiva",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnngimenez/cuenta-regresiva.git"
+  },
+  "author": "Christian Gimenez",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/cnngimenez/cuenta-regresiva/issues"
+  },
+  "homepage": "https://github.com/cnngimenez/cuenta-regresiva#readme"
+}
