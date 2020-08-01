@@ -1,0 +1,89 @@
+!!!
+%html(lang="en")
+  %head
+
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    %link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
+
+    %link(rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css")
+    %title Cuenta Regersiva - Formulario
+
+  %body
+    .container.my-4
+      .form-group
+        %h1
+          %i.fas.fa-photo-video
+          Video de fondo
+        %select.custom-select#background
+          %option typing
+          %option coffee
+          %option mate
+          %option beer
+        
+      .form-group
+        %h1
+          %i.fas.fa-edit
+          Mensaje
+        %input.form-control#message(type="text")
+  
+      %h1
+        %i.fas.fa-calendar
+        Fecha y hora del evento
+      .form-group
+        %label(for="day") Fecha
+        .input-group
+          %input.form-control#day(type="text")
+          %select.custom-select#month
+            %option(value=1) Enero
+            %option(value=2) Febrero
+            %option(value=3) Marzo
+            %option(value=4) Abril
+            %option(value=5) Mayo
+            %option(value=6) Junio
+            %option(value=7) Julio
+            %option(value=8) Agosto
+            %option(value=9) Septiembre
+            %option(value=10) Octubre
+            %option(value=11) Noviembre
+            %option(value=12) Diciembre
+          %input.form-control#year(type="text")
+
+        .form-group
+          %label Hora
+          .row
+            .col
+              .input-group
+                %input.form-control#hour(type="text")
+                .input-group-append
+                  %span.input-group-text hs.
+            .col
+              .input-group
+                %input.form-control#min(type="text")
+                .input-group-append
+                  %span.input-group-text mins.
+
+      %h1
+        %i.fas.fa-link
+        Tu Cuenta Regresiva
+
+      %p
+        URL para compartir tu cuenta regresiva:
+      
+      .input-group
+        %input.form-control#result(readonly)
+        .input-group-append
+          %button.btn.btn-secondary#copy(type="button")
+            .copy-tooltip(data-toggle="tooltip" data-placement="top" title="¡Copiado!")
+            %i.far.fa-copy
+        
+      %br
+      %a.btn.btn-success#result(type="button" target="_blank" href="#")
+        Ver cuenta regresiva
+
+
+    %script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+    %script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    %script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous")
+    %script(src="js/create.js" type="module")

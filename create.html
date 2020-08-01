@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'>
+<link crossorigin='anonymous' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' rel='stylesheet'>
+<link href='node_modules/@fortawesome/fontawesome-free/css/all.min.css' rel='stylesheet'>
+<title>Cuenta Regersiva - Formulario</title>
+</head>
+<body>
+<div class='container my-4'>
+<div class='form-group'>
+<h1>
+<i class='fas fa-photo-video'></i>
+Video de fondo
+</h1>
+<select class='custom-select' id='background'>
+<option>typing</option>
+<option>coffee</option>
+<option>mate</option>
+<option>beer</option>
+</select>
+</div>
+<div class='form-group'>
+<h1>
+<i class='fas fa-edit'></i>
+Mensaje
+</h1>
+<input class='form-control' id='message' type='text'>
+</div>
+<h1>
+<i class='fas fa-calendar'></i>
+Fecha y hora del evento
+</h1>
+<div class='form-group'>
+<label for='day'>Fecha</label>
+<div class='input-group'>
+<input class='form-control' id='day' type='text'>
+<select class='custom-select' id='month'>
+<option value='1'>Enero</option>
+<option value='2'>Febrero</option>
+<option value='3'>Marzo</option>
+<option value='4'>Abril</option>
+<option value='5'>Mayo</option>
+<option value='6'>Junio</option>
+<option value='7'>Julio</option>
+<option value='8'>Agosto</option>
+<option value='9'>Septiembre</option>
+<option value='10'>Octubre</option>
+<option value='11'>Noviembre</option>
+<option value='12'>Diciembre</option>
+</select>
+<input class='form-control' id='year' type='text'>
+</div>
+<div class='form-group'>
+<label>Hora</label>
+<div class='row'>
+<div class='col'>
+<div class='input-group'>
+<input class='form-control' id='hour' type='text'>
+<div class='input-group-append'>
+<span class='input-group-text'>hs.</span>
+</div>
+</div>
+</div>
+<div class='col'>
+<div class='input-group'>
+<input class='form-control' id='min' type='text'>
+<div class='input-group-append'>
+<span class='input-group-text'>mins.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h1>
+<i class='fas fa-link'></i>
+Tu Cuenta Regresiva
+</h1>
+<p>
+URL para compartir tu cuenta regresiva:
+</p>
+<div class='input-group'>
+<input class='form-control' id='result' readonly>
+<div class='input-group-append'>
+<button class='btn btn-secondary' id='copy' type='button'>
+<div class='copy-tooltip' data-placement='top' data-toggle='tooltip' title='¡Copiado!'></div>
+<i class='far fa-copy'></i>
+</button>
+</div>
+</div>
+<br>
+<a class='btn btn-success' href='#' id='result' target='_blank' type='button'>
+Ver cuenta regresiva
+</a>
+</div>
+<script crossorigin='anonymous' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script crossorigin='anonymous' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+<script crossorigin='anonymous' integrity='sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI' src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
+<script src='js/create.js' type='module'></script>
+</body>
+</html>
