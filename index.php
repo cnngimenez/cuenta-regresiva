@@ -87,6 +87,7 @@ $fecha_js = $fecha_fin->format('Y') . ',' .
               <img src="./imgs/pinned-octocat.svg" width="25px"
                    alt="Más info/Repo">
             </a>
+            <a class="" href="create.html">Crear tu cuenta regresiva</a>
           </div>
         </div>
 

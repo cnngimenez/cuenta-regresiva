@@ -77,6 +77,32 @@ $$ |      $$ |  $$ |$$ |  $$ |$$ |  $$ | $$ |$$\ $$ |  $$ |$$ |  $$ |$$ | $$ | $
     min-height: 70px;
 }
 
+a {
+    color: gray;
+    font-size: small;
+    transition-duration: .6s;
+    transition-property: all;
+    display: inline-block;
+    text-decoration: none;
+}
+a img {
+    color: gray;
+    font-size: small;
+    transition-duration: .6s;
+    transition-property: all;
+    padding: 2px;
+    display: inline-block;
+    padding: 2px;
+}
+a:hover {
+    background-color: white;
+    color: gray;
+}
+a img:hover {
+    padding: 2px;
+    color: gray;
+    background-color: white;
+}
 
 /*
  --------------------
