@@ -15,7 +15,7 @@
 
   // You should have received a copy of the GNU Affero General Public License
   // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  var assign_events, copy_url, create_link, create_link_from_form, initialize_data;
+  var assign_events, copy_url, create_link, create_link_from_form, initialize_data, show_copied_tooltip;
 
   create_link_from_form = function() {
     var selmonth, selvideo, txtday, txthour, txtmin, txtmsg, txtyear;
@@ -59,15 +59,27 @@
     return $("a#result").attr('href', link);
   };
 
+  show_copied_tooltip = function() {
+    $(".copy-tooltip").tooltip("show");
+    return window.setTimeout(function() {
+      return $(".copy-tooltip").tooltip("hide");
+    }, 2000);
+  };
+
   copy_url = function() {
-    var p;
-    p = navigator.clipboard.writeText($("input#result").val());
-    return p.then(function() {
-      $(".copy-tooltip").tooltip("show");
-      return window.setTimeout(function() {
-        return $(".copy-tooltip").tooltip("hide");
-      }, 2000);
-    });
+    var p, success;
+    if (navigator.clipboard != null) {
+      p = navigator.clipboard.writeText($("input#result").val());
+      return p.then(function() {
+        return show_copied_tooltip();
+      });
+    } else {
+      $("input#result").select();
+      success = document.execCommand('copy');
+      if (success) {
+        return show_copied_tooltip();
+      }
+    }
   };
 
   assign_events = function() {

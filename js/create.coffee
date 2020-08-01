@@ -54,13 +54,21 @@ window.update_url = () ->
     $("input#result").val link
     $("a#result").attr 'href', link
 
+show_copied_tooltip = () ->
+    $(".copy-tooltip").tooltip "show"
+    window.setTimeout () ->
+        $(".copy-tooltip").tooltip "hide"
+    , 2000
+
 copy_url = () ->
-    p = navigator.clipboard.writeText $("input#result").val()
-    p.then () ->
-        $(".copy-tooltip").tooltip "show"
-        window.setTimeout () ->
-            $(".copy-tooltip").tooltip "hide"
-        , 2000
+    if navigator.clipboard?
+        p = navigator.clipboard.writeText $("input#result").val()
+        p.then () ->
+            show_copied_tooltip()
+    else
+        $("input#result").select()
+        success = document.execCommand 'copy'
+        show_copied_tooltip() if success
 
 assign_events = () ->
     $("input[type=text]").on 'change', update_url
