@@ -80,6 +80,18 @@
                 %input.form-control#min(type="text")
                 .input-group-append
                   %span.input-group-text mins.
+          .row
+            .col
+              %label Repetir
+              %select.custom-select#repeat
+                %option(value='') No repetir
+                %option(value='monday') Todos los lunes
+                %option(value='tuesday') Todos los martes
+                %option(value='wednesday') Todos los miércoles
+                %option(value='thursday') Todos los jueves
+                %option(value='friday') Todos los viernes
+                %option(value='saturday') Todos los sábados
+                %option(value='sunday') Todos los domingos
 
       %h1
         %i.fas.fa-link

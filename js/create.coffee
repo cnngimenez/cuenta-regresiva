@@ -22,6 +22,7 @@ create_link_from_form = () ->
     txtyear = $('#year')
     txthour = $('#hour')
     txtmin = $('#min')
+    selrepeat = $('#repeat')
 
     selvideo = $('#background')
 
@@ -33,6 +34,7 @@ create_link_from_form = () ->
             year: txtyear.val()
             hour: txthour.val()
             min: txtmin.val()
+            repeat: selrepeat.val()
         video: './videos/' + selvideo.val() + '.mp4'
 
 create_link = (data) ->
@@ -46,6 +48,8 @@ create_link = (data) ->
     url.searchParams.set 'msj', data.message
     url.searchParams.set 'fin', fin 
     url.searchParams.set 'video', data.video
+    if data.date.repeat != ''
+      url.searchParams.set 'repeat', data.date.repeat
 
     url
 
