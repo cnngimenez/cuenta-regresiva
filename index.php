@@ -3,6 +3,7 @@ $video_url = './videos/typing.mp4';
 $msj = '';
 $title = '';
 $fin = '0,0,0,0,0';
+$repeat='';
 
 if (isset($_REQUEST['video'])){
     $video_url = $_REQUEST['video'];
@@ -14,11 +15,25 @@ if (isset($_REQUEST['msj'])){
 if (isset($_REQUEST['fin'])){
     $fin = $_REQUEST['fin'];
 }
+if (isset($_REQUEST['repeat'])) {
+    $repeat = $_REQUEST['repeat'];
+}
 
 $fecha_fin = DateTime::createFromFormat('Y,m,d,H,i', $fin);
 if (!$fecha_fin){
     $fecha_fin = new DateTime();
 }
+
+function next_date($curdate, $repeat){
+    $int = DateInterval::createFromDateString($repeat);
+    return $curdate->add($int);
+}
+
+$today = new DateTime();
+if ($repeat != '' and  $fecha_fin < $today) {
+    $fecha_fin = next_date($today, $repeat);
+}
+
 $fecha_js = $fecha_fin->format('Y') . ',' .
             $fecha_fin->format('m') . ' - 1,' .
             $fecha_fin->format('d,H,i');
